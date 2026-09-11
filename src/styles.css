@@ -1,15 +1,15 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @font-face {
-  font-family: 'DM Sans';
-  src: url('/fonts/dm-sans-latin.woff2') format('woff2');
+  font-family: "DM Sans";
+  src: url("/fonts/dm-sans-latin.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 1000;
   font-display: swap;
 }
 @font-face {
   font-family: Fraunces;
-  src: url('/fonts/fraunces-latin.woff2') format('woff2');
+  src: url("/fonts/fraunces-latin.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -22,7 +22,7 @@
   --color-muted: #746b60;
   --color-border: #e4ded2;
   --color-accent: #455b3b;
-  --font-sans: 'DM Sans', sans-serif;
+  --font-sans: "DM Sans", sans-serif;
   --font-serif: Fraunces, Georgia, serif;
 }
 :root {
@@ -36,7 +36,7 @@
   --gutter: clamp(24px, 5.5vw, 88px);
   color: var(--foreground);
   background: var(--background);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -497,6 +497,8 @@ h2 {
   will-change: transform;
   display: grid;
   place-items: center;
+  perspective: 900px;
+  transform-style: preserve-3d;
   filter: drop-shadow(0 24px 25px rgb(92 39 30 / 18%));
 }
 .real-fruit-photo {
@@ -504,15 +506,19 @@ h2 {
   height: 100%;
   object-fit: contain;
   transform-origin: 50% 55%;
-  animation: fruit-float 4.8s ease-in-out infinite;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  animation: fruit-float-3d 6.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
-@keyframes fruit-float {
+@keyframes fruit-float-3d {
   0%,
   100% {
-    transform: translate3d(0, -6px, 0) rotate(-1.4deg);
+    transform: translate3d(0, -8px, 0) rotateX(-2deg) rotateY(-11deg)
+      rotateZ(-1.2deg) scale(1);
   }
   50% {
-    transform: translate3d(0, 9px, 0) rotate(1.4deg);
+    transform: translate3d(0, 10px, 22px) rotateX(2deg) rotateY(11deg)
+      rotateZ(1.2deg) scale(1.025);
   }
 }
 .benefits {
@@ -1021,7 +1027,7 @@ h2 {
   object-position: center 46%;
 }
 .story-photo::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, #1b211acf, transparent 80%);
@@ -1041,6 +1047,7 @@ h2 {
   font-size: clamp(32px, 4vw, 55px);
   letter-spacing: -0.04em;
   max-width: 570px;
+  text-wrap: balance;
 }
 .story-photo small {
   font-size: 7px;
@@ -1273,7 +1280,7 @@ h2 {
   display: block;
 }
 .desktop-nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 3px;
   inset-inline: 0;
@@ -1321,7 +1328,7 @@ h2 {
   font-size: 10px;
 }
 .hero-art::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 96%;
   aspect-ratio: 1;
@@ -1384,7 +1391,7 @@ h2 {
   display: flex;
   width: max-content;
   transform: translateX(-50%);
-  animation: ribbon-travel 28s linear infinite;
+  animation: ribbon-travel 18s linear infinite;
   will-change: transform;
 }
 .brand-ribbon:hover > div {
@@ -1398,6 +1405,13 @@ h2 {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.2em;
+  white-space: nowrap;
+}
+.brand-ribbon .ribbon-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 42px;
+  padding-right: 0;
 }
 .brand-ribbon b {
   color: #d7c99e;
@@ -1406,15 +1420,15 @@ h2 {
   line-height: 1;
 }
 @keyframes ribbon-travel {
-  from {
+  0% {
     transform: translateX(-50%);
   }
-  to {
+  100% {
     transform: translateX(0);
   }
 }
 .story-fruit-space::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 7% 5% 8%;
   border: 1px solid #bbc2a6;
@@ -1426,7 +1440,7 @@ h2 {
   border-color: #e9d8cb;
 }
 .final-art::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 0 12% 3%;
   border: 1px solid #f4ceae35;
@@ -1786,7 +1800,7 @@ h2 {
     display: inline;
   }
   .hero h1 > span:nth-child(2)::after {
-    content: ' ';
+    content: " ";
   }
   .hero-description {
     font-size: 13px;
@@ -2286,10 +2300,10 @@ h2 {
 @media (prefers-reduced-motion: reduce) {
   .story-fruit-space::after,
   .final-fruit-space::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
-    background: url('/images/strawberry-real.webp') center / contain no-repeat;
+    background: url("/images/strawberry-real.webp") center / contain no-repeat;
   }
 }
 
@@ -2381,6 +2395,24 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  .hero h1 {
+    font-size: clamp(52px, 15vw, 72px);
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+  .hero-description {
+    max-width: 31ch;
+    text-wrap: balance;
+  }
+  .hero-story-link > span {
+    max-width: 24ch;
+    line-height: 1.35;
+  }
+  .section-intro h2,
+  .comparison-heading h2,
+  .reviews-intro h2 {
+    text-wrap: balance;
+  }
   .reviews {
     padding-top: 52px;
   }

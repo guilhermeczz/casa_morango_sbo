@@ -6,55 +6,69 @@ import {
   MessageCircle,
   ShoppingBasket,
   MapPin,
-} from 'lucide-react'
-import { Eyebrow } from './ui'
+} from "lucide-react";
+import { Eyebrow } from "./ui";
 
 const benefits = [
   {
     icon: Gem,
-    title: 'Qualidade premium',
-    text: 'Selecionados com rigor. Um a um.',
+    title: "Qualidade premium",
+    text: "Selecionados com rigor. Um a um.",
   },
   {
     icon: Leaf,
-    title: 'Frescor garantido',
-    text: 'Frutas frescas, todos os dias.',
+    title: "Frescor garantido",
+    text: "Frutas frescas, todos os dias.",
   },
   {
     icon: Truck,
-    title: 'Entrega rápida',
-    text: 'Da nossa casa para sua mesa.',
+    title: "Entrega rápida",
+    text: "Da nossa casa para sua mesa.",
   },
   {
     icon: BadgeCheck,
-    title: 'Vale cada pedido',
-    text: 'Ótimo sabor. Ótimo custo-benefício.',
+    title: "Vale cada pedido",
+    text: "Ótimo sabor. Ótimo custo-benefício.",
   },
   {
     icon: MessageCircle,
-    title: 'Pedido sem complicação',
-    text: 'Atendimento direto e rápido pelo WhatsApp.',
+    title: "Pedido sem complicação",
+    text: "Atendimento direto e rápido pelo WhatsApp.",
   },
   {
     icon: ShoppingBasket,
-    title: 'Atacado e varejo',
-    text: 'A quantidade certa para a sua casa ou negócio.',
+    title: "Atacado e varejo",
+    text: "A quantidade certa para a sua casa ou negócio.",
   },
   {
     icon: MapPin,
-    title: 'Perto de você',
-    text: 'Atendimento local em Santa Bárbara d’Oeste.',
+    title: "Perto de você",
+    text: "Atendimento local em Santa Bárbara d’Oeste.",
   },
-]
+];
+
+const ribbonBenefits = [
+  "CUIDADO EM CADA PEDIDO",
+  "FRESCOR DE VERDADE",
+  "ENTREGA RÁPIDA",
+  "SELEÇÃO PRIME",
+  "ATACADO E VAREJO",
+  "PERTO DE VOCÊ",
+];
 
 export function Benefits() {
   return (
     <>
       <div className="brand-ribbon" aria-hidden="true">
         <div>
-          {Array.from({ length: 6 }, (_, index) => (
-            <span key={index}>
-              CUIDADO EM CADA PEDIDO<b>✳</b>FRESCOR DE VERDADE<b>✳</b>
+          {Array.from({ length: 3 }, (_, repeat) => (
+            <span key={repeat}>
+              {ribbonBenefits.map((benefit, index) => (
+                <span className="ribbon-item" key={benefit}>
+                  {benefit}
+                  {index < ribbonBenefits.length - 1 && <b>✳</b>}
+                </span>
+              ))}
             </span>
           ))}
         </div>
@@ -86,5 +100,5 @@ export function Benefits() {
         </div>
       </section>
     </>
-  )
+  );
 }
