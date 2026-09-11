@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ArrowUpRight, Instagram } from 'lucide-react'
 import { Brand, WhatsAppLink } from './ui'
-import { whatsappUrl } from '../constants/business'
+import { WhatsAppIcon } from './WhatsAppIcon'
+import { business, whatsappUrl } from '../constants/business'
 
 const links = [
   ['Início', '#inicio'],
@@ -62,7 +63,18 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <WhatsAppLink className="header-cta" />
+        <div className="header-actions">
+          <WhatsAppLink className="header-cta" />
+          <a
+            className="header-instagram"
+            href={business.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram da Casa do Morango Prime"
+          >
+            <Instagram size={23} strokeWidth={1.7} />
+          </a>
+        </div>
         <button
           ref={toggle}
           className="menu-toggle"
@@ -93,6 +105,7 @@ export function Header() {
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
           >
+            <WhatsAppIcon />
             Pedir pelo WhatsApp
             <ArrowUpRight size={20} />
           </a>

@@ -232,6 +232,37 @@ h2 {
 .header-scrolled .header-inner {
   border-color: transparent;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header-instagram {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--primary);
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.header-instagram:hover {
+  background: #b823360c;
+}
+.whatsapp-icon {
+  flex-shrink: 0;
+}
+@media (max-width: 899px) {
+  .header-actions {
+    margin-left: auto;
+    margin-right: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .header-actions {
+    margin-right: 8px;
+  }
+}
 .brand {
   display: inline-flex;
   align-items: center;
@@ -517,9 +548,6 @@ h2 {
   overflow: hidden;
   width: 100%;
 }
-.brand-ribbon {
-  padding-right: 56px;
-}
 .ribbon-group {
   justify-content: space-around;
 }
@@ -529,23 +557,9 @@ h2 {
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
-.ribbon-toggle {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  color: #fff6e4;
-  border: 1px solid #ffffff50;
-  border-radius: 50%;
-  background: var(--accent);
-}
-.ribbon-toggle:focus-visible {
+.brand-ribbon:focus-visible {
   outline-color: #fff6e4;
-  outline-offset: 2px;
+  outline-offset: -4px;
 }
 @keyframes fruit-float-3d {
   0%,
@@ -1412,14 +1426,6 @@ h2 {
   font-size: 21px;
   font-weight: 400;
   line-height: 1;
-}
-.story-fruit-space::before {
-  content: '';
-  position: absolute;
-  inset: 7% 5% 8%;
-  border: 1px solid #bbc2a6;
-  border-radius: 48% 48% 45% 45%;
-  transform: rotate(-12deg);
 }
 .review:nth-child(2) {
   background: #f1e6dc;
@@ -2784,7 +2790,12 @@ p {
 
 /* Opening composition follows the supplied inspiration: live copy + fruit arrangement. */
 .hero-reference {
-  background: #fff5ed;
+  background: radial-gradient(
+    ellipse at 30% 45%,
+    #fffaf3 0%,
+    #fff5ed 64%,
+    #f7e9d8 100%
+  );
   min-height: 700px;
   height: min(800px, 100svh);
 }
@@ -2835,18 +2846,92 @@ p {
 .hero-reference .hero-art::before {
   display: none;
 }
+.hero-reference .hero-art,
+.hero-reference .hero-art img,
+.hero-leaves {
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+.hero-reference .hero-art img {
+  -webkit-user-drag: none;
+}
+.comparison-showcase .choice-image {
+  animation: none;
+}
+.comparison-showcase .prime-choice .choice-image img {
+  padding: 0;
+  object-fit: cover;
+  object-position: 45% center;
+  filter: none;
+}
+.hero-leaves {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero-leaf {
+  position: absolute;
+  display: block;
+  width: clamp(140px, 15vw, 230px);
+  aspect-ratio: 1;
+  background: url('/images/hero-leaves.webp') center / contain no-repeat;
+  filter: blur(6px);
+  opacity: 0.68;
+}
+.hero-leaf-left {
+  left: -105px;
+  top: 105px;
+  transform: rotate(30deg);
+}
+.hero-leaf-right {
+  right: -110px;
+  top: 82px;
+  transform: rotate(-65deg);
+}
+.hero-leaf-bottom {
+  left: -100px;
+  bottom: -38px;
+  transform: rotate(115deg);
+  filter: blur(9px);
+  opacity: 0.46;
+}
+.story-fruit-space .real-fruit-photo {
+  animation: none;
+}
+.final-side {
+  align-self: center;
+  padding-bottom: 0;
+}
+@media (max-width: 600px) {
+  .hero-leaf-left {
+    width: 140px;
+    left: -98px;
+    top: 115px;
+  }
+  .hero-leaf-right {
+    width: 145px;
+    right: -105px;
+    top: 85px;
+  }
+  .hero-leaf-bottom {
+    width: 140px;
+    left: -115px;
+    bottom: 0;
+  }
+  .final-side {
+    align-self: stretch;
+  }
+}
 .hero-reference .hero-art .real-fruit-track {
   inset: 0 -5% 0 0;
   filter: none;
 }
 .hero-reference .hero-art .real-fruit-photo {
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    #000 5%,
-    #000 95%,
-    transparent
-  );
+  mask-image:
+    linear-gradient(to right, transparent, #000 6%, #000 94%, transparent),
+    linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  mask-composite: intersect;
   animation: reference-float 7s ease-in-out infinite;
 }
 @keyframes reference-float {

@@ -1,4 +1,5 @@
-import { ArrowUpRight, MessageCircle } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
+import { WhatsAppIcon } from './WhatsAppIcon'
 import type { ReactNode } from 'react'
 import { whatsappUrl } from '../constants/business'
 
@@ -16,7 +17,7 @@ export function WhatsAppLink({
       rel="noopener noreferrer"
       className={`button ${className}`}
     >
-      <MessageCircle size={19} strokeWidth={1.7} aria-hidden="true" />
+      <WhatsAppIcon />
       <span>{children}</span>
       <ArrowUpRight size={18} aria-hidden="true" />
     </a>

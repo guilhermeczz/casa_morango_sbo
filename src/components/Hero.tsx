@@ -9,6 +9,11 @@ export function Hero() {
       className="hero hero-reference"
       aria-labelledby="hero-title"
     >
+      <div className="hero-leaves" aria-hidden="true">
+        <span className="hero-leaf hero-leaf-left" />
+        <span className="hero-leaf hero-leaf-right" />
+        <span className="hero-leaf hero-leaf-bottom" />
+      </div>
       <div className="container hero-inner">
         <div className="hero-copy">
           <Eyebrow>MORANGOS SELECIONADOS</Eyebrow>
@@ -49,6 +54,7 @@ export function Hero() {
               width="1254"
               height="1254"
               fetchPriority="high"
+              draggable={false}
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
 export const business = {
   name: 'Casa do Morango Prime',
-  phone: '(19) 99447-4588',
+  phone: '',
   whatsappNumber: '5519994474588',
   address: 'Rua 13 de Maio, 1229 — Centro',
   city: 'Santa Bárbara d’Oeste · SP',

@@ -1,5 +1,13 @@
 # Imagens Prime
 
+## prime-selection.webp
+
+Composição de vários morangos utilizada no card da seleção Prime. Gerada com a ferramenta integrada usando `inspiração.png` como referência. Prompt: Use case: ads-marketing. Asset type: wide photographic banner for Casa do Morango Prime landing page. Use the LARGE elongated premium strawberry in the TOP HERO of the supplied website mockup as the visual reference. Create a new ultra-realistic close-up food photograph of three exceptionally plump LARGE elongated premium strawberries on a warm ivory stone surface, lush fresh green crowns, rich ruby red skin, crisp golden seeds and tiny natural water droplets. Three berries only, filling much of the scene so their large shoulders and quality are immediately clear. One dominant berry foreground left, second foreground right slightly behind, third softly out of focus behind. Soft warm daylight, luxurious simple editorial food photography. Landscape 1536x1024, leave darker natural space near lower edge for a future white caption. No words, no logos, no website UI, no hands, no small piles of strawberries, no cartoon or plastic.
+
+## hero-leaves.webp
+
+Folhas decorativas geradas com a ferramenta integrada. Prompt: Asset: isolated realistic strawberry plant leaf for website decoration. One small sprig with three fresh emerald green serrated strawberry leaves and a fine green stem, natural soft daylight and realistic veins. Diagonal orientation. Entire sprig centered within a square canvas with clear margin. Genuinely TRANSPARENT alpha background, no checkerboard drawn, no white backdrop, no words, no strawberry fruits, no logo. Photoreal botanical cutout, not illustration. 1024x1024.
+
 Geradas com a ferramenta integrada de imagens, usando `inspiração.png` fornecida pelo usuário como referência. São ilustrações fotorealistas, não registros de um lote real. PNGs convertidos para WebP com alpha preservado pelo script `scripts/encode-prime-assets.mjs`.
 
 ## strawberry-prime.webp

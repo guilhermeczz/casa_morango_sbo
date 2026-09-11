@@ -42,10 +42,10 @@ export function Comparison() {
             </span>
             <div className="choice-image">
               <img
-                src="/images/strawberry-prime.webp"
-                alt="Imagem ilustrativa de um morango graúdo da seleção Prime"
-                width="1213"
-                height="1297"
+                src="/images/prime-selection.webp"
+                alt="Composição ilustrativa de vários morangos graúdos, frescos e selecionados da categoria Prime"
+                width="1536"
+                height="1024"
                 loading="lazy"
               />
             </div>
@@ -103,8 +103,7 @@ export function Comparison() {
 
         <div className="comparison-action" data-reveal>
           <p>
-            Imagens ilustrativas. Tamanho e aparência variam conforme o
-            lote.
+            
           </p>
           <a
             href={whatsappUrl}

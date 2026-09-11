@@ -27,4 +27,4 @@ Com o servidor ativo, `node scripts/visual-check.mjs` gera capturas em cinco lar
 
 O build estático é gerado em `dist/`. Defina `VITE_SITE_URL` com o domínio HTTPS definitivo, conforme `.env.example`, para incluir o endereço canônico e a imagem de compartilhamento nos metadados.
 
-As fontes e imagens são servidas localmente. Os créditos e licenças estão em `public/credits.html`. A preferência por movimento reduzido desativa a flutuação das frutas. A esteira inicia automaticamente, pausa no hover e retoma ao retirar o mouse; o botão também permite pausá-la pelo teclado ou no celular.
+As fontes e imagens são servidas localmente. Os créditos e licenças estão em `public/credits.html`. A preferência por movimento reduzido desativa a animação do topo e suaviza a flutuação na seção de cuidado. A esteira inicia automaticamente, pausa no hover ou foco pelo teclado e retoma ao retirar o mouse ou o foco.

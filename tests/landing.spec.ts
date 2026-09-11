@@ -23,18 +23,13 @@ test('esteira inicia sozinha, pausa no hover e mantém ciclo contínuo', async (
   await page.mouse.move(0, 0)
   await page.waitForTimeout(500)
   expect((await x()) - hovered).toBeGreaterThan(10)
-  await page
-    .getByRole('button', { name: 'Pausar esteira de benefícios' })
-    .click()
-  await page.mouse.move(0, 0)
+  await expect(ribbon.getByRole('button')).toHaveCount(0)
+  await ribbon.focus()
   await page.waitForTimeout(100)
   const stopped = await x()
   await page.waitForTimeout(300)
   expect(await x()).toBeCloseTo(stopped, 1)
-  await page
-    .getByRole('button', { name: 'Reproduzir esteira de benefícios' })
-    .click()
-  await page.mouse.move(0, 0)
+  await ribbon.evaluate((element) => (element as HTMLElement).blur())
   await page.waitForTimeout(300)
   expect(await x()).toBeGreaterThan(stopped)
 

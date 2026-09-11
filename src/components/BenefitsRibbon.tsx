@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { Pause, Play } from 'lucide-react'
 
 const items = [
   'Cuidado em cada pedido',
@@ -14,9 +13,9 @@ export function BenefitsRibbon() {
   const track = useRef<HTMLDivElement>(null)
   const group = useRef<HTMLDivElement>(null)
   const animation = useRef<Animation | null>(null)
-  const [manuallyPaused, setManuallyPaused] = useState(false)
+  const [focused, setFocused] = useState(false)
   const [hovered, setHovered] = useState(false)
-  const paused = manuallyPaused || hovered
+  const paused = focused || hovered
 
   useEffect(() => {
     const element = track.current!
@@ -63,6 +62,9 @@ export function BenefitsRibbon() {
     <section
       className="brand-ribbon"
       aria-label="Benefícios da Casa do Morango Prime"
+      tabIndex={0}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
       onPointerEnter={(event) => {
         if (event.pointerType === 'mouse') setHovered(true)
       }}
@@ -87,17 +89,6 @@ export function BenefitsRibbon() {
           ))}
         </div>
       </div>
-      <button
-        className="ribbon-toggle"
-        onClick={() => setManuallyPaused(!manuallyPaused)}
-        aria-label={
-          manuallyPaused
-            ? 'Reproduzir esteira de benefícios'
-            : 'Pausar esteira de benefícios'
-        }
-      >
-        {manuallyPaused ? <Play size={16} /> : <Pause size={16} />}
-      </button>
     </section>
   )
 }

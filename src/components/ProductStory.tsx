@@ -13,11 +13,6 @@ export function ProductStory() {
       <div className="container story-grid">
         <div className="story-fruit-space" aria-hidden="true">
           <PrimeFruit />
-          <span className="story-watermark">
-            puro
-            <br />
-            cuidado.
-          </span>
           <span className="story-fruit-note">
             Pequenos detalhes.
             <br />

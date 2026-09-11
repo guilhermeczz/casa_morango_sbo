@@ -1,7 +1,6 @@
 import { ArrowUpRight, Instagram, MapPin } from 'lucide-react'
 import { Eyebrow, WhatsAppLink } from './ui'
 import { business } from '../constants/business'
-import { PrimeFruit } from './PrimeFruit'
 
 export function FinalCTA() {
   return (
@@ -25,19 +24,11 @@ export function FinalCTA() {
           </WhatsAppLink>
           <a className="final-phone" href={`tel:+${business.whatsappNumber}`}>
             {business.phone}
-            <ArrowUpRight size={14} />
+            <ArrowUpRight size={0} />
           </a>
         </div>
 
         <div className="final-side">
-          <div className="final-fruit-space" aria-hidden="true">
-            <PrimeFruit />
-            <span>
-              bom
-              <br />
-              demais.
-            </span>
-          </div>
           <div className="final-map" data-reveal>
             <iframe
               src={business.mapsEmbedUrl}
