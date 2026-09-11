@@ -60,16 +60,16 @@ export function Benefits() {
   return (
     <>
       <div className="brand-ribbon" aria-hidden="true">
-        <div>
-          {Array.from({ length: 3 }, (_, repeat) => (
-            <span key={repeat}>
-              {ribbonBenefits.map((benefit, index) => (
+        <div className="ribbon-track">
+          {[0, 1].map((group) => (
+            <div className="ribbon-group" key={group}>
+              {ribbonBenefits.map((benefit) => (
                 <span className="ribbon-item" key={benefit}>
                   {benefit}
-                  {index < ribbonBenefits.length - 1 && <b>✳</b>}
+                  <b>✳</b>
                 </span>
               ))}
-            </span>
+            </div>
           ))}
         </div>
       </div>

@@ -453,8 +453,7 @@ h2 {
   position: absolute;
   bottom: 24px;
   inset-inline: 0;
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
+  padding-top: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1387,17 +1386,13 @@ h2 {
   color: #fff6e4;
   padding-block: 18px;
 }
-.brand-ribbon > div {
+.ribbon-track {
   display: flex;
   width: max-content;
-  transform: translateX(-50%);
-  animation: ribbon-travel 18s linear infinite;
+  animation: ribbon-travel 24s linear infinite;
   will-change: transform;
 }
-.brand-ribbon:hover > div {
-  animation-play-state: paused;
-}
-.brand-ribbon span {
+.ribbon-group {
   display: flex;
   align-items: center;
   gap: 42px;
@@ -1421,10 +1416,10 @@ h2 {
 }
 @keyframes ribbon-travel {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 .story-fruit-space::before {
@@ -1908,11 +1903,14 @@ h2 {
   .brand-ribbon {
     padding-block: 16px;
   }
-  .brand-ribbon span {
+  .ribbon-group {
     font-size: 8px;
     gap: 24px;
     padding-right: 24px;
     letter-spacing: 0.17em;
+  }
+  .brand-ribbon .ribbon-item {
+    gap: 24px;
   }
   .brand-ribbon b {
     font-size: 18px;
