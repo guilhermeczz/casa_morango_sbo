@@ -1,0 +1,11 @@
+# Imagens Prime
+
+Geradas com a ferramenta integrada de imagens, usando `inspiração.png` fornecida pelo usuário como referência. São ilustrações fotorealistas, não registros de um lote real. PNGs convertidos para WebP com alpha preservado pelo script `scripts/encode-prime-assets.mjs`.
+
+## strawberry-prime.webp
+
+Prompt: Use case: background-extraction. Asset type: transparent landing page hero strawberry. The supplied image is a reference website mockup. Recreate and isolate ONLY the huge premium strawberry in the TOP DESKTOP HERO (the large fruit at approximately x=590,y=290 of the reference), at very high photographic resolution on a genuinely transparent background. Match the reference strawberry's elongated conical shape, plump broad shoulders, rich ruby red color, golden seeds, vibrant lush green crown, glossy fresh natural skin with tiny water droplets, diagonal pose pointing lower left with crown upper right. Preserve the exceptionally large, premium, appetizing appearance. Single whole strawberry only, entirely within the frame with 7% transparent margin all around. Photoreal macro food photography, soft directional studio lighting, naturally detailed seeds, no plastic/cartoon/vector look. No text, no website, no frames, no slices or other fruits, no background, no floor, no cast shadow. Transparent PNG, 1536px or higher.
+
+## hero-inspiration.webp
+
+Prompt: Create a production-ready hero illustration matching ONLY the top desktop hero strawberry arrangement from the supplied reference website. Preserve the big elongated ruby red strawberry pointing lower left with crown upper right, three floating strawberry slices, water droplets and fresh green leaves, with the same photographic lighting and same composition from the top of this reference. Very important: use a SOLID PALE WARM IVORY BACKGROUND, exact #fff5ed, extending cleanly to every edge. NOT transparent, NO checkerboard, NO grid. Leave a 6% pale ivory clean margin so fruit is fully contained. No website text, no handwritten annotations, no logo, no screen or browser chrome, no phone. Output square 1536x1536 photographic composition. Keep the fruit's natural conical shape, its bright shine and the deep green leaves faithful to the input hero. This will be placed on a #fff5ed website background.

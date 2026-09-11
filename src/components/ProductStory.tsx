@@ -1,6 +1,7 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Eyebrow } from './ui'
 import { whatsappUrl } from '../constants/business'
+import { PrimeFruit } from './PrimeFruit'
 
 export function ProductStory() {
   return (
@@ -11,6 +12,7 @@ export function ProductStory() {
     >
       <div className="container story-grid">
         <div className="story-fruit-space" aria-hidden="true">
+          <PrimeFruit />
           <span className="story-watermark">
             puro
             <br />
@@ -57,19 +59,6 @@ export function ProductStory() {
           </a>
         </div>
       </div>
-      <figure className="story-photo">
-        <img
-          src="/images/strawberries.webp"
-          alt="Fotografia ilustrativa de morangos frescos com folhas verdes"
-          width="1200"
-          height="800"
-          loading="lazy"
-        />
-        <figcaption>
-          <span>O simples, feito com cuidado.</span>
-          <small>FOTOGRAFIA ILUSTRATIVA</small>
-        </figcaption>
-      </figure>
     </section>
   )
 }

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Instagram, MapPin } from 'lucide-react'
 import { Eyebrow, WhatsAppLink } from './ui'
 import { business } from '../constants/business'
+import { PrimeFruit } from './PrimeFruit'
 
 export function FinalCTA() {
   return (
@@ -30,6 +31,7 @@ export function FinalCTA() {
 
         <div className="final-side">
           <div className="final-fruit-space" aria-hidden="true">
+            <PrimeFruit />
             <span>
               bom
               <br />

@@ -1,6 +1,6 @@
 # Casa do Morango Prime
 
-Landing page da Casa do Morango Prime, em Santa Bárbara d’Oeste. Desenvolvida com React, TypeScript e Vite, com fotografia real do produto e animações automáticas de rolagem.
+Landing page da Casa do Morango Prime, em Santa Bárbara d’Oeste. Desenvolvida com React, TypeScript e Vite, com imagens ilustrativas Prime baseadas em `inspiração.png`, flutuação automática e esteira contínua de benefícios.
 
 ## Executar localmente
 
@@ -27,4 +27,4 @@ Com o servidor ativo, `node scripts/visual-check.mjs` gera capturas em cinco lar
 
 O build estático é gerado em `dist/`. Defina `VITE_SITE_URL` com o domínio HTTPS definitivo, conforme `.env.example`, para incluir o endereço canônico e a imagem de compartilhamento nos metadados.
 
-As fontes e fotografias são servidas localmente. Os créditos e licenças estão em `public/credits.html`. A preferência por movimento reduzido é respeitada.
+As fontes e imagens são servidas localmente. Os créditos e licenças estão em `public/credits.html`. A preferência por movimento reduzido desativa a flutuação das frutas. A esteira inicia automaticamente, pausa no hover e retoma ao retirar o mouse; o botão também permite pausá-la pelo teclado ou no celular.

@@ -4,7 +4,7 @@ import { whatsappUrl } from '../constants/business'
 
 const primeQualities = [
   'Escolhidos um a um',
-  'Aparência mais uniforme',
+  'Graúdos e bem selecionados',
   'Frescor e cuidado no pedido',
 ]
 const variableQualities = [
@@ -42,10 +42,10 @@ export function Comparison() {
             </span>
             <div className="choice-image">
               <img
-                src="/images/strawberry-real.webp"
-                alt="Fotografia de um morango selecionado da categoria Prime"
-                width="900"
-                height="1080"
+                src="/images/strawberry-prime.webp"
+                alt="Imagem ilustrativa de um morango graúdo da seleção Prime"
+                width="1213"
+                height="1297"
                 loading="lazy"
               />
             </div>
@@ -103,7 +103,7 @@ export function Comparison() {
 
         <div className="comparison-action" data-reveal>
           <p>
-            Fotografias ilustrativas. Tamanho e aparência variam conforme o
+            Imagens ilustrativas. Tamanho e aparência variam conforme o
             lote.
           </p>
           <a

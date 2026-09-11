@@ -1,75 +1,59 @@
-import { ArrowDown, ArrowDownRight, MoveUpRight, Leaf } from 'lucide-react'
+import { ArrowDown, MoveUpRight, Star } from 'lucide-react'
 import { business } from '../constants/business'
 import { Eyebrow, WhatsAppLink } from './ui'
 
 export function Hero() {
   return (
-    <section id="inicio" className="hero" aria-labelledby="hero-title">
+    <section
+      id="inicio"
+      className="hero hero-reference"
+      aria-labelledby="hero-title"
+    >
       <div className="container hero-inner">
         <div className="hero-copy">
           <Eyebrow>MORANGOS SELECIONADOS</Eyebrow>
           <h1 id="hero-title">
-            <span>Frescor real.</span> <span>Sabor que</span> <em>encanta.</em>
+            <span>Frescor real</span>
+            <em>em cada entrega.</em>
           </h1>
           <p className="hero-description">
-            Bonitos de ver. Incríveis de provar.
-            <br /> Morangos escolhidos um a um, da nossa casa
-            <br className="desktop-break" /> para a sua mesa.
+            Morangos frescos, doces e de qualidade excepcional. Direto da nossa
+            casa para a sua mesa em Santa Bárbara d’Oeste – SP.
           </p>
-          <WhatsAppLink>Quero meus morangos</WhatsAppLink>
-          <p className="hero-service">
-            <span />
-            Atacado & varejo<span className="service-divider">/</span>Entrega
-            rápida
-          </p>
-          <a className="hero-story-link" href="#cuidado">
-            <img
-              src="/images/strawberries.webp"
-              alt=""
-              width="64"
-              height="64"
-            />
+          <WhatsAppLink>Pedir agora no WhatsApp</WhatsAppLink>
+          <a className="hero-reviews-link" href="#avaliacoes">
+            <span className="hero-review-stars" aria-hidden="true">
+              {Array.from({ length: 5 }, (_, index) => (
+                <Star
+                  key={index}
+                  size={15}
+                  fill="currentColor"
+                  strokeWidth={0}
+                />
+              ))}
+            </span>
             <span>
-              O simples pode ser <em>extraordinário.</em>
+              Quem já provou, recomenda.
               <small>
-                Conheça o nosso cuidado
-                <MoveUpRight size={13} />
+                Veja as avaliações dos nossos clientes <MoveUpRight size={13} />
               </small>
             </span>
           </a>
         </div>
         <div className="hero-art">
-          <span className="hero-edition">
-            NATUREZA CAPRICHOU.
-            <br />A GENTE SELECIONOU.
-          </span>
-          <span className="hero-watermark" aria-hidden="true">
-            prime.
-          </span>
-          <div className="hero-orbit" aria-hidden="true" />
-          <span className="hero-art-label">
-            <Leaf size={14} strokeWidth={1.5} />
-            Naturalmente irresistível.
-          </span>
-          <span className="fruit-caption" aria-hidden="true">
-            <ArrowDownRight size={29} strokeWidth={1} />
-            Selecionados.
-            <br />
-            Um a um.
-          </span>
-          <div
-            className="selection-seal"
-            aria-label="Seleção Prime, frescor de verdade"
-          >
-            <span>SELEÇÃO</span>
-            <span className="seal-star" aria-hidden="true">
-              ✳
-            </span>
-            <span>PRIME</span>
+          <div className="real-fruit-track">
+            <img
+              className="real-fruit-photo"
+              src="/images/hero-inspiration.webp"
+              alt="Composição ilustrativa de um morango graúdo com fatias, folhas verdes e gotas de frescor"
+              width="1254"
+              height="1254"
+              fetchPriority="high"
+            />
           </div>
         </div>
         <div className="hero-bottom">
-          <a href="#qualidade" className="scroll-cue">
+          <a href="#avaliacoes" className="scroll-cue">
             <span>
               <ArrowDown size={17} />
             </span>
@@ -81,8 +65,7 @@ export function Hero() {
             rel="noopener noreferrer"
             className="hero-location"
           >
-            SANTA BÁRBARA D’OESTE, SP
-            <MoveUpRight size={14} />
+            SANTA BÁRBARA D’OESTE, SP <MoveUpRight size={14} />
           </a>
         </div>
       </div>
