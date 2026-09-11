@@ -1,4 +1,12 @@
-import { Gem, Leaf, Truck, BadgeCheck } from 'lucide-react'
+import {
+  Gem,
+  Leaf,
+  Truck,
+  BadgeCheck,
+  MessageCircle,
+  ShoppingBasket,
+  MapPin,
+} from 'lucide-react'
 import { Eyebrow } from './ui'
 
 const benefits = [
@@ -22,6 +30,21 @@ const benefits = [
     title: 'Vale cada pedido',
     text: 'Ótimo sabor. Ótimo custo-benefício.',
   },
+  {
+    icon: MessageCircle,
+    title: 'Pedido sem complicação',
+    text: 'Atendimento direto e rápido pelo WhatsApp.',
+  },
+  {
+    icon: ShoppingBasket,
+    title: 'Atacado e varejo',
+    text: 'A quantidade certa para a sua casa ou negócio.',
+  },
+  {
+    icon: MapPin,
+    title: 'Perto de você',
+    text: 'Atendimento local em Santa Bárbara d’Oeste.',
+  },
 ]
 
 export function Benefits() {
@@ -29,9 +52,9 @@ export function Benefits() {
     <>
       <div className="brand-ribbon" aria-hidden="true">
         <div>
-          {Array.from({ length: 4 }, (_, index) => (
+          {Array.from({ length: 6 }, (_, index) => (
             <span key={index}>
-              FRESCOR DE VERDADE<b>✳</b>CUIDADO EM CADA PEDIDO<b>✳</b>
+              CUIDADO EM CADA PEDIDO<b>✳</b>FRESCOR DE VERDADE<b>✳</b>
             </span>
           ))}
         </div>

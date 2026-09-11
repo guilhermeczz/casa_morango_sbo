@@ -1,27 +1,8 @@
-import { useState } from 'react'
-import {
-  ArrowDown,
-  ArrowDownRight,
-  MoveUpRight,
-  Pointer,
-  RotateCcw,
-  Leaf,
-} from 'lucide-react'
+import { ArrowDown, ArrowDownRight, MoveUpRight, Leaf } from 'lucide-react'
 import { business } from '../constants/business'
 import { Eyebrow, WhatsAppLink } from './ui'
 
 export function Hero() {
-  const [detail, setDetail] = useState(0)
-  const details = [
-    'Selecionados. Um a um.',
-    'Frescor em cada detalhe.',
-    'Da nossa casa para a sua.',
-  ]
-  const interact = () => {
-    setDetail((value) => (value + 1) % details.length)
-    window.dispatchEvent(new CustomEvent('strawberry-turn'))
-  }
-
   return (
     <section id="inicio" className="hero" aria-labelledby="hero-title">
       <div className="container hero-inner">
@@ -70,39 +51,11 @@ export function Hero() {
             <Leaf size={14} strokeWidth={1.5} />
             Naturalmente irresistível.
           </span>
-          <button
-            className="fruit-interaction"
-            onClick={interact}
-            aria-label="Girar o morango 3D e descobrir um detalhe"
-            onPointerMove={(event) => {
-              if (event.pointerType !== 'mouse') return
-              const rect = event.currentTarget.getBoundingClientRect()
-              window.dispatchEvent(
-                new CustomEvent('strawberry-pointer', {
-                  detail: {
-                    x: (event.clientX - rect.left) / rect.width - 0.5,
-                    y: (event.clientY - rect.top) / rect.height - 0.5,
-                  },
-                }),
-              )
-            }}
-            onPointerLeave={() =>
-              window.dispatchEvent(
-                new CustomEvent('strawberry-pointer', {
-                  detail: { x: 0, y: 0 },
-                }),
-              )
-            }
-          >
-            <span className="interaction-hint">
-              <Pointer size={15} />
-              Toque. Gire. Descubra.
-              <RotateCcw size={13} />
-            </span>
-          </button>
-          <span className="fruit-caption" aria-live="polite">
+          <span className="fruit-caption" aria-hidden="true">
             <ArrowDownRight size={29} strokeWidth={1} />
-            {details[detail]}
+            Selecionados.
+            <br />
+            Um a um.
           </span>
           <div
             className="selection-seal"

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Header } from './components/Header'
@@ -9,10 +9,9 @@ import { ProductStory } from './components/ProductStory'
 import { Reviews } from './components/Reviews'
 import { FinalCTA } from './components/FinalCTA'
 import { Footer } from './components/Footer'
+import StrawberryExperience from './components/StrawberryExperience'
 
 gsap.registerPlugin(ScrollTrigger)
-const StrawberryExperience = lazy(() => import('./components/StrawberryExperience'))
-
 export default function App() {
   const main = useRef<HTMLElement>(null)
 
@@ -20,19 +19,35 @@ export default function App() {
     const media = gsap.matchMedia()
     media.add('(prefers-reduced-motion: no-preference)', () => {
       const elements = main.current?.querySelectorAll('[data-reveal]') ?? []
-      elements.forEach((element) => gsap.from(element, {
-        opacity: 0, y: 28, duration: 0.75, ease: 'power2.out',
-        scrollTrigger: { trigger: element, start: 'top 94%', once: true },
-      }))
+      elements.forEach((element) =>
+        gsap.from(element, {
+          opacity: 0,
+          y: 28,
+          duration: 0.75,
+          ease: 'power2.out',
+          scrollTrigger: { trigger: element, start: 'top 94%', once: true },
+        }),
+      )
     })
     return () => media.revert()
   }, [])
 
-  return <>
-    <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
-    <Header />
-    <main ref={main} id="conteudo"><Hero /><Benefits /><Comparison /><ProductStory /><Reviews /><FinalCTA /></main>
-    <Suspense fallback={<div className="initial-fruit" aria-hidden="true"><img src="/images/strawberry.webp" alt="" /></div>}><StrawberryExperience /></Suspense>
-    <Footer />
-  </>
+  return (
+    <>
+      <a className="skip-link" href="#conteudo">
+        Pular para o conteúdo
+      </a>
+      <Header />
+      <main ref={main} id="conteudo">
+        <Hero />
+        <Benefits />
+        <Comparison />
+        <ProductStory />
+        <Reviews />
+        <FinalCTA />
+      </main>
+      <StrawberryExperience />
+      <Footer />
+    </>
+  )
 }
